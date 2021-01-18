@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var actividades = ViewBag.actividades;
+}
+
+<h2>Agenda</h2>
+<form asp-action="Marcacion" asp-controller="AgendaNormal" class="float-md-right">
+    <input type="hidden" value="2" name="usuario"/>
+    <div class="form-group">
+        <input type="submit" value="Marcar" class="btn btn-primary" />
+    </div>
+</form>
+<hr />
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <label>Fecha Actividad</label>
+                </th>
+                <th>
+                    <label>Numero de actividades</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in actividades)
+            {
+                <tr>
+                    <td>
+                        <label>@item.Fecha_actividad</label>
+                    </td>
+                    <td>
+                        <label>@item.Actividades</label>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    
+}
+
+<div class="text-center">
+    <div class="offset-4 col-md-4 offset-4">
+        <h1 class="display-4">INICIO DE SESION</h1>
+        <form asp-action="Login">
+            <div class="form-group">
+                <label for="carnet">CARNET:</label>
+                <input type="text" class="form-control" id="carnet" name="carnet">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Contraseña:</label>
+                <input type="password" class="form-control" id="pwd" name="pwd">
+            </div>
+            <button type="submit" class="btn btn-success">INGRESAR</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var actividades = ViewBag.actividades;
+}
+
+<h1>Agenda</h1>
+
+<!--
+ En esta tabla podrias ver el listado de usuarios junto con la fecha en que se ha registrado y el numero de actividades realizadas    
+    adicional tendria un boton para ver por usuario y asi saber los dias de registro y que dias ha tenido permiso
+-->
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <label>Usuario</label>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in actividades)
+            {
+            <tr>
+                <td>
+                    <label>@item.Tbl_Usuarios.Nombre @item.Tbl_Usuarios.Apellido </label>
+                </td>
+                <td>
+                    <a asp-action="Revision" asp-route-id="@item.Id_usuario" class="btn btn-outline-warning">Revisar</a>
+                </td>
+               
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

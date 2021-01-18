@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Prueba_Web.Models.tbl_Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Usuarios</h1>
+<p class="">
+    <a asp-action="Index" asp-controller="TiposUsuarios" class="btn btn-outline-dark float-md-right">Tipos de usuarios</a>
+</p>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nuevo usuario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carnet)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Pass)
+            </th>*@
+            <th>
+                <label>Tipo de usuario</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carnet)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Pass)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Tipos_Usuarios.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_usuario" class="btn btn-outline-warning">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_usuario" class="btn btn-outline-info">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_usuario" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

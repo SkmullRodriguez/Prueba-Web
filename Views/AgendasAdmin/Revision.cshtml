@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Prueba_Web.Models.tbl_Control_actividades>
+
+@{
+    ViewData["Title"] = "Revision";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var permiso = ViewBag.permisos;
+}
+
+<h1>Revision</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_actividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actividades)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @{
+                    foreach (var per in permiso)
+                    {
+                        if (per.Fecha_permiso == item.Fecha_actividad)
+                        {
+                            <label>Permiso</label>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.Fecha_actividad)
+                        }
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actividades)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model Prueba_Web.Models.tbl_Usuarios
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Esta seguro de eliminar?</h3>
+<div>
+    <h4>Usuarios</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Carnet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Carnet)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pass)
+        </dd>*@
+        <dt class = "col-sm-2">
+            <span>>Tipo de Usuario</span>
+            @Html.DisplayNameFor(model => model.Tbl_Tipos_Usuarios)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tbl_Tipos_Usuarios.Nombre)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id_usuario" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">Regresar</a>
+    </form>
+</div>
