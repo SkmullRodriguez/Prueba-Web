@@ -7,14 +7,23 @@
 }
 
 <h2>Agenda</h2>
-<form asp-action="Marcacion" asp-controller="AgendaNormal" class="float-md-right">
+
+<!-- este boton estaba pensando en poder marcar y asi poder crear una marcacion y al mismo tiempo crea una actividad de la cual se pueda ver que ya esta activa
+    y ha iniciado a trabajar
+    -->
+
+@*<form asp-action="Marcacion" asp-controller="AgendaNormal" class="float-md-right">
     <input type="hidden" value="2" name="usuario"/>
     <div class="form-group">
         <input type="submit" value="Marcar" class="btn btn-primary" />
     </div>
-</form>
-<hr />
+</form>*@
 
+
+<!--
+    El listado en esta tabla debe de ser limitado a la de cada usuario pero por diversos motivos y dificultadas en la persistencia de la informacion del usuario 
+    para continuar con la informacion en las siguientes actividades, por ello se muestran todas en general
+-->
 <div>
     <table class="table">
         <thead>

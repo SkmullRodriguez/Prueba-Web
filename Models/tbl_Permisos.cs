@@ -16,7 +16,6 @@ namespace Prueba_Web.Models
         [StringLength(50)]
         public string Nombre { get; set; }
         [Required]
-        [StringLength(50)]
         [DataType(DataType.Date)]
         public DateTime Fecha_permiso { get; set; }
         public Boolean Estado { get; set; }

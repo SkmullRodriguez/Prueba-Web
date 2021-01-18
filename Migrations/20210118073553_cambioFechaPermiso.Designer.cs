@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Prueba_Web.Data;
 
 namespace Prueba_Web.Migrations
 {
     [DbContext(typeof(PruebaContext))]
-    partial class PruebaContextModelSnapshot : ModelSnapshot
+    [Migration("20210118073553_cambioFechaPermiso")]
+    partial class cambioFechaPermiso
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -167,3 +167,9 @@ C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1
 C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Permisos\Edit.cshtml.g.cs
 C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Permisos\Delete.cshtml.g.cs
 C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\AgendaNormal\Index.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\AgendasAdmin\Revision.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Index.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Details.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Create.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Edit.cshtml.g.cs
+C:\Users\Administrador\source\repos\Proyectos\Prueba-Web\obj\Debug\netcoreapp3.1\Razor\Views\Clientes\Delete.cshtml.g.cs

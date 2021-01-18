@@ -1,9 +1,9 @@
-﻿
+﻿@model IEnumerable<Prueba_Web.Models.tbl_Usuarios>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 
-    var actividades = ViewBag.actividades;
+    
 }
 
 <h1>Agenda</h1>
@@ -12,6 +12,7 @@
  En esta tabla podrias ver el listado de usuarios junto con la fecha en que se ha registrado y el numero de actividades realizadas    
     adicional tendria un boton para ver por usuario y asi saber los dias de registro y que dias ha tenido permiso
 -->
+
 <div>
     <table class="table">
         <thead>
@@ -23,14 +24,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in actividades)
+            @foreach (var item in Model)
             {
             <tr>
                 <td>
-                    <label>@item.Tbl_Usuarios.Nombre @item.Tbl_Usuarios.Apellido </label>
+                    <label>@item.Nombre @item.Apellido </label>
                 </td>
                 <td>
-                    <a asp-action="Revision" asp-route-id="@item.Id_usuario" class="btn btn-outline-warning">Revisar</a>
+                    <a asp-action="Revision" asp-route-id="@item.Id_usuario" class="btn btn-outline-primary">Revisar</a>
                 </td>
                
             </tr>

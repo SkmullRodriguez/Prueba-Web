@@ -50,7 +50,7 @@ namespace Prueba_Web.Controllers
         // GET: PermisosController/Create
         public ActionResult Create()
         {
-            ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_Usuario", "Nombre");
+            ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_usuario", "Nombre");
             return View();
         }
 
@@ -61,17 +61,16 @@ namespace Prueba_Web.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    _db.Permisos.Add(permisos);
-                    _db.SaveChanges();
-                }
+                permisos.Estado = true;
+
+                _db.Permisos.Add(permisos);
+                _db.SaveChanges();                
 
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_Usuario", "Nombre");
+                ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_usuario", "Nombre");
                 return View(permisos);
             }
         }
@@ -91,7 +90,7 @@ namespace Prueba_Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_Usuario", "Nombre");
+            ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_usuario", "Nombre");
             return View(permisos);
         }
 
@@ -102,16 +101,16 @@ namespace Prueba_Web.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    _db.Entry(permisos).State = EntityState.Modified;
-                    _db.SaveChanges();
-                }
+                permisos.Estado = true;
+
+                _db.Entry(permisos).State = EntityState.Modified;
+                _db.SaveChanges();
+                
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_Usuario", "Nombre");
+                ViewBag.Id_usuario = new SelectList(_db.Usuarios.Where(s => s.Estado == true), "Id_usuario", "Nombre");
                 return View(permisos);
             }
         }
@@ -142,7 +141,10 @@ namespace Prueba_Web.Controllers
             try
             {
                 tbl_Permisos permisos = _db.Permisos.Find(id);
-                _db.Remove(permisos);
+
+                permisos.Estado = false;
+
+                _db.Entry(permisos).State = EntityState.Modified;
                 _db.SaveChanges();
 
                 return RedirectToAction(nameof(Index));
